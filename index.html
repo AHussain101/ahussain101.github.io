@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!-- Portfolio by Aarfan Hussain -->
+<html>
+    <head>
+        <title>Aarfan Hussain - Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            .image.fit.thumb img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            .experience-logo {
+                max-height: 100px; /* Adjust the height as needed */
+                max-width: 200px; /* Adjust the width as needed */
+                display: block;
+                margin: 0 auto 10px auto;
+            }
+            .experience-item {
+                margin-bottom: 40px;
+            }
+            .experience-title {
+                font-weight: bold;
+                font-size: 1.25em;
+                margin-top: 10px;
+            }
+            .experience-details {
+                margin-left: 20px;
+            }
+            .image-smaller {
+                max-height: 550px; /* Adjust the height as needed */
+                width: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            .image.avatar img {
+                width: 150px; /* Adjust the width as needed */
+                height: auto;
+                border-radius: 50%;
+                display: block;
+                margin: 0 auto;
+            }
+            .about-me-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .about-me-text {
+                flex: 1;
+                padding-right: 20px;
+            }
+            .about-me-logo img {
+                max-width: 150px; /* Adjust the size as needed */
+                height: auto;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="image avatar"><img src="images/aarfan.jpg" alt="Aarfan Hussain" /></a>
+                <h1><strong>I am Aarfan Hussain</strong>, a passionate software engineer<br />
+                with expertise in machine learning and spftware development.</h1>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- About Me -->
+            <section id="one">
+                <header class="major">
+                    <h2>About Me</h2>
+                </header>
+                <div class="about-me-content">
+                    <div class="about-me-text">
+                        <p>I'm currently a student at the University of Washington, majoring in Computer Science with minors in Informatics and Business. My interests lie in developing innovative solutions using machine learning and enhancing user experiences through software development. I am also looking to gain more experience in backend development and explore the exciting possibilities with large language models (LLMs).</p>
+                    </div>
+                    <div class="about-me-logo">
+                        <img src="images/uw_logo.png" alt="University of Washington Logo" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section id="two">
+                <h2>Recent Experience</h2>
+                <div class="row">
+                    <article class="col-6 col-12-xsmall work-item experience-item">
+                        <img src="images/oksi.png" alt="OKSI Logo" class="experience-logo" />
+                        <h3 class="experience-title">Software Engineering Intern at OKSI AI</h3>
+                        <div class="experience-details">
+                            <ul>
+                                <li>Developed a universal image classification model using PyTorch and TensorFlow, processing 8-bit and 16-bit imagery.</li>
+                                <li>Engineered a YOLOv8 classifier for 16-bit grayscale image enhancement, improving object detection accuracy by 65%.</li>
+                                <li>Created a multi-head AlexNet model for concurrent classification tasks (length, beam, aspect).</li>
+                                <li>Automated dataset processing and normalization, including TIFF stacks and various bit depths.</li>
+                                <li>Implemented mixed precision training with PyTorch’s GradScaler, reducing training time by 40%.</li>
+                                <li>Integrated models into production systems, writing over 5,500 lines of code in a Git-controlled environment.</li>
+                                <li>Built an end-to-end ML pipeline using Python, YAML, and argparse.</li>
+                                <li>Developed Matplotlib scripts for real-time visualization of training metrics.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="col-6 col-12-xsmall work-item experience-item">
+                        <img src="images/nasa.png" alt="NASA Logo" class="experience-logo" />
+                        <h3 class="experience-title">Machine Learning Research Intern at NASA AMES Research Center</h3>
+                        <div class="experience-details">
+							<a href="https://ntrs.nasa.gov/citations/20220016356" target="_blank">Read Publication</a>
+                            <ul>
+                                <li>Explored three machine learning techniques for UAV path planning: Genetic Algorithm, Simulated Annealing, and Dynamic Programming.</li>
+                                <li>Genetic Algorithm was found to be highly effective for path planning, particularly for scenarios with up to 25 locations, achieving optimal paths sensitive to hyperparameter selection.</li>
+                                <li>Simulated Annealing proved beneficial by avoiding local minima and being easy to implement, with performance influenced by hyperparameters.</li>
+                                <li>Dynamic Programming, while guaranteeing optimal paths, was less practical for larger scenarios due to high execution times.</li>
+                                <li>For wildfire detection, developed an image classification system using deep learning with convolutional neural networks (CNNs).</li>
+                                <li>Employed transfer learning for efficient training and leveraged GPU processing to accelerate training speeds by an order of magnitude.</li>
+                                <li>Achieved high accuracy in validation tests with 500 images, yielding only two false negatives and zero false positives.</li>
+                            </ul>
+                            
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="three">
+                <h2>Projects</h2>
+                <div class="row">
+                    <article class="col-12 work-item">
+                        <img src="images/fungi.jpeg" alt="FungiFind" class="image-smaller" />
+                        <h3>FungiFind</h3>
+                        <p>Developed an iOS and Android app for identifying and providing details about mushrooms using user-taken photos. Programmed the front end in React and handled the back end in Python, processing over 10,000 images with ML algorithms. <a href="https://github.com/hcp-uw/shroomies" target="_blank">GitHub Repository</a></p>
+                    </article>
+                    <article class="col-12 work-item">
+                        <a href="images/info.png" class="image fit thumb"><img src="images/info.png" alt="Pollution & Diseases" /></a>
+                        <h3>Pollution & Diseases</h3>
+                        <p>Evaluated the effects of air pollution on respiratory disease mortality using WHO and CDC data. Used R for data manipulation and HTML/CSS for front-end design, improving data visualization and user experience. <a href="https://zchen66.shinyapps.io/info-final-proj/" target="_blank">Information Project</a></p>
+                    </article>
+                    <article class="col-12 work-item">
+                        <a href="images/enypto.jpg" class="image fit thumb"><img src="images/enypto.jpg" alt="Enypto" /></a>
+                        <h3>Enypto</h3>
+                        <p>Developed a web application for secure email communication using encryption. Designed the front end in React, contributing over 400 lines of code. Implemented public key cryptography for secure exchanges between users. <a href="https://devpost.com/software/enypto" target="_blank">Devpost Project</a></p>
+                    </article>
+                </div>
+             
+            </section>
+
+            <!-- Contact Info -->
+            <section id="four">
+                <h2>Contact Information</h2>
+                <p>If you have any questions or would like to discuss potential opportunities, feel free to contact me.</p>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="labeled-icons">
+                            <li>
+                                <h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+                                Seattle, WA<br />
+                                United States
+                            </li>
+                            <li>
+                                <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+                                (657) 269-7134
+                            </li>
+                            <li>
+                                <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+                                <a href="mailto:aarfanh2307@gmail.com">aarfanh2307@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/aarfan" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="mailto:aarfanh2307@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/aarfan-hussain/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Aarfan Hussain</li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
