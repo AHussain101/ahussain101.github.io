@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<!-- Portfolio by Aarfan Hussain -->
 <html>
     <head>
         <title>Aarfan Hussain - Portfolio</title>
@@ -14,8 +13,8 @@
                 margin: 0 auto;
             }
             .experience-logo {
-                max-height: 100px; /* Adjust the height as needed */
-                max-width: 200px; /* Adjust the width as needed */
+                max-height: 100px;
+                max-width: 200px;
                 display: block;
                 margin: 0 auto 10px auto;
             }
@@ -31,13 +30,13 @@
                 margin-left: 20px;
             }
             .image-smaller {
-                max-height: 550px; /* Adjust the height as needed */
+                max-height: 550px;
                 width: auto;
                 display: block;
                 margin: 0 auto;
             }
             .image.avatar img {
-                width: 150px; /* Adjust the width as needed */
+                width: 150px;
                 height: auto;
                 border-radius: 50%;
                 display: block;
@@ -47,14 +46,25 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                flex-wrap: wrap;
             }
             .about-me-text {
                 flex: 1;
                 padding-right: 20px;
             }
             .about-me-logo img {
-                max-width: 150px; /* Adjust the size as needed */
+                max-width: 150px;
                 height: auto;
+            }
+            @media (max-width: 768px) {
+                .about-me-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .about-me-text {
+                    padding-right: 0;
+                    margin-bottom: 20px;
+                }
             }
         </style>
     </head>
@@ -121,7 +131,6 @@
                                 <li>Employed transfer learning for efficient training and leveraged GPU processing to accelerate training speeds by an order of magnitude.</li>
                                 <li>Achieved high accuracy in validation tests with 500 images, yielding only two false negatives and zero false positives.</li>
                             </ul>
-                            
                         </div>
                     </article>
                 </div>
@@ -132,22 +141,21 @@
                 <h2>Projects</h2>
                 <div class="row">
                     <article class="col-12 work-item">
-                        <img src="images/fungi.jpeg" alt="FungiFind" class="image-smaller" />
+                        <a href="https://github.com/hcp-uw/shroomies" target="_blank"><img src="images/fungi.jpeg" alt="FungiFind" class="image-smaller" /></a>
                         <h3>FungiFind</h3>
                         <p>Developed an iOS and Android app for identifying and providing details about mushrooms using user-taken photos. Programmed the front end in React and handled the back end in Python, processing over 10,000 images with ML algorithms. <a href="https://github.com/hcp-uw/shroomies" target="_blank">GitHub Repository</a></p>
                     </article>
                     <article class="col-12 work-item">
-                        <a href="images/info.png" class="image fit thumb"><img src="images/info.png" alt="Pollution & Diseases" /></a>
+                        <a href="https://zchen66.shinyapps.io/info-final-proj/" target="_blank"><img src="images/info.png" alt="Pollution & Diseases" class="image fit thumb" /></a>
                         <h3>Pollution & Diseases</h3>
                         <p>Evaluated the effects of air pollution on respiratory disease mortality using WHO and CDC data. Used R for data manipulation and HTML/CSS for front-end design, improving data visualization and user experience. <a href="https://zchen66.shinyapps.io/info-final-proj/" target="_blank">Information Project</a></p>
                     </article>
                     <article class="col-12 work-item">
-                        <a href="images/enypto.jpg" class="image fit thumb"><img src="images/enypto.jpg" alt="Enypto" /></a>
+                        <a href="https://devpost.com/software/enypto" target="_blank"><img src="images/enypto.jpg" alt="Enypto" class="image fit thumb" /></a>
                         <h3>Enypto</h3>
                         <p>Developed a web application for secure email communication using encryption. Designed the front end in React, contributing over 400 lines of code. Implemented public key cryptography for secure exchanges between users. <a href="https://devpost.com/software/enypto" target="_blank">Devpost Project</a></p>
                     </article>
                 </div>
-             
             </section>
 
             <!-- Contact Info -->
