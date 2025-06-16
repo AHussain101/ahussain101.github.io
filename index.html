@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aarfan Hussain - Software Engineer, AI/ML Researcher, and Entrepreneur. Co-founder of soarin.ai with experience at NASA, Google, OKSI AI, and University of Washington.">
+    <meta name="keywords" content="Aarfan Hussain, Software Engineer, Machine Learning, AI, NASA, Google, soarin.ai, University of Washington, Computer Vision, Portfolio">
+    <meta name="author" content="Aarfan Hussain">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aarfanhussain.com">
+    <meta property="og:title" content="Aarfan Hussain - Software Engineer & Entrepreneur">
+    <meta property="og:description" content="Co-founder of soarin.ai, AI/ML researcher with experience at NASA, Google, and University of Washington. Building the future with technology.">
+    <meta property="og:image" content="images/aarfan.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aarfanhussain.com">
+    <meta property="twitter:title" content="Aarfan Hussain - Software Engineer & Entrepreneur">
+    <meta property="twitter:description" content="Co-founder of soarin.ai, AI/ML researcher with experience at NASA, Google, and University of Washington.">
+    <meta property="twitter:image" content="images/aarfan.jpg">
+
     <title>Aarfan Hussain - Software Engineer & Entrepreneur</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    
     <style>
         :root {
             --dark-bg: #0a0a0a;
@@ -72,6 +101,28 @@
             background: var(--accent-purple);
         }
 
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid var(--subtle-purple);
+            outline-offset: 2px;
+        }
+
+        /* Performance optimizations */
+        .project-image img,
+        .profile-image,
+        .hiking-image {
+            will-change: transform;
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
         /* Navigation */
         .navbar {
             position: fixed;
@@ -92,6 +143,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
         }
 
         .logo {
@@ -135,6 +191,35 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
 
         /* Hero Section */
@@ -310,10 +395,53 @@
 
         /* About Section */
         .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .about-main {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 4rem;
             align-items: start;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: all 0.4s ease;
+        }
+
+        .about-image:hover {
+            border-color: var(--subtle-purple);
+            transform: scale(1.02);
+        }
+
+        .hiking-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1.5rem 1rem 1rem;
+            text-align: center;
+        }
+
+        .image-caption span {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .about-text p {
@@ -791,62 +919,346 @@
             animation: slideDown 0.5s ease forwards;
         }
 
-        /* Mobile Responsive */
+        /* Enhanced Responsive Design */
+        
+        /* Tablet Responsive (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-content {
+                gap: 4rem;
+                grid-template-columns: 1fr 0.8fr;
+            }
+
+            .about-main {
+                gap: 3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Mobile Responsive (768px and below) */
         @media (max-width: 768px) {
+            /* Navigation */
+            .nav-container {
+                padding: 0 1rem;
+            }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                color: var(--text-primary);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 0 1rem;
+                min-height: 80vh;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 3rem;
+                margin-top: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: clamp(2.5rem, 8vw, 3.5rem);
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-text .description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                max-width: 100%;
             }
 
             .profile-container {
-                width: 280px;
-                height: 280px;
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
             }
 
-            .about-content {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            /* About Section */
+            .about-main {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2.5rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .hiking-image {
+                height: 280px;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
+            .stat-card {
+                padding: 2rem 1.5rem;
+            }
+
+            /* Experience Section */
             .experience-tabs {
                 flex-direction: column;
                 border-bottom: none;
+                gap: 0;
             }
 
             .tab-button {
                 border-bottom: 1px solid var(--border-color);
                 border-right: none;
                 text-align: left;
+                padding: 1rem 1.5rem;
+                font-size: 0.95rem;
             }
 
             .tab-button.active {
                 border-bottom-color: var(--border-color);
                 background: var(--card-bg);
+                color: var(--subtle-purple);
+            }
+
+            .job-title {
+                font-size: 1.3rem;
+                line-height: 1.3;
+            }
+
+            .job-description li {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 0.8rem;
+            }
+
+            /* Projects Section */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                margin-bottom: 0;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+                line-height: 1.3;
+            }
+
+            .project-description {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .project-tech {
+                gap: 0.5rem;
+                margin: 1rem 0;
+            }
+
+            .tech-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            /* Contact Section */
+            .contact-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .contact-description {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 2rem;
             }
 
             .contact-info {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .contact-item {
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .contact-item i {
+                font-size: 1.25rem;
+            }
+
+            .contact-item span {
+                font-size: 0.95rem;
             }
 
             .social-links {
                 flex-wrap: wrap;
+                gap: 0.75rem;
+                justify-content: center;
+            }
+
+            .social-link {
+                padding: 0.75rem;
+                font-size: 1.1rem;
+            }
+
+            /* General Mobile Adjustments */
+            .section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        /* Small Mobile Responsive (480px and below) */
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .profile-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .hiking-image {
+                height: 250px;
+            }
+
+            .project-card {
+                border-radius: 12px;
+            }
+
+            .contact-title {
+                font-size: 1.75rem;
             }
 
             .section {
-                padding: 4rem 0;
+                padding: 2.5rem 0;
+            }
+
+            .container {
+                padding: 0 0.75rem;
+            }
+        }
+
+        /* Large Desktop Responsive (1200px and above) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1200px;
+            }
+
+            .hero-content {
+                gap: 8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+
+            .about-main {
+                gap: 5rem;
             }
         }
 
@@ -870,12 +1282,19 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Aarfan Hussain</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -886,7 +1305,7 @@
                 <h1>Building the future with AI</h1>
                 <p class="subtitle">Co-Founder • Software Engineer • ML Researcher</p>
                 <p class="description">
-                    I'm Aarfan Hussain, co-founder of <span class="highlight">soarin.ai</span> and Computer Science student at UW. 
+                    I'm Aarfan Hussain, co-founder of <span class="highlight">soarin.ai</span> (Y Combinator interest) and Informatics student at UW. 
                     From NASA research to defense AI applications, I'm passionate about creating technology that makes a difference.
                 </p>
                 <div class="cta-buttons">
@@ -896,7 +1315,7 @@
             </div>
             <div class="hero-image">
                 <div class="profile-container">
-                    <img src="images/aarfan.jpg" alt="Aarfan Hussain" class="profile-image">
+                    <img src="images/aarfan.jpg" alt="Aarfan Hussain" class="profile-image" loading="eager">
                 </div>
             </div>
         </div>
@@ -913,23 +1332,40 @@
             </div>
             
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm pursuing <span class="highlight">Computer Science and Informatics</span> at the University of Washington 
-                        and co-founder of <span class="highlight">soarin.ai</span>, where we're revolutionizing how 
-                        people create career-ready assets using AI.
-                    </p>
-                    <p>
-                        My journey in tech spans from <span class="highlight">NASA research</span> to 
-                        <span class="highlight">defense AI applications</span> at OKSI, and cutting-edge 
-                        <span class="highlight">medical imaging research</span> at KurtLab. I'm passionate about 
-                        leveraging machine learning to solve real-world problems.
-                    </p>
-                    <p>
-                        Currently, I'm working on scaling soarin.ai while preparing for my upcoming internship 
-                        at <span class="highlight">Deloitte</span> in Risk & Financial Advisory. I believe in 
-                        building technology that makes opportunities more accessible for everyone.
-                    </p>
+                <div class="about-main">
+                    <div class="about-text">
+                        <p>
+                            I'm pursuing <span class="highlight">Informatics</span> at the University of Washington 
+                            and co-founder of <span class="highlight">soarin.ai</span>, where we're revolutionizing how 
+                            people create career-ready assets using AI. We've garnered <span class="highlight">Y Combinator interest</span> 
+                            and are actively scaling our platform.
+                        </p>
+                        <p>
+                            My journey in tech spans from <span class="highlight">NASA research</span> to 
+                            <span class="highlight">defense AI applications</span> at OKSI, and cutting-edge 
+                            <span class="highlight">medical imaging research</span> at KurtLab. I'm passionate about 
+                            leveraging machine learning to solve real-world problems.
+                        </p>
+                        <p>
+                            Currently, I'm working on scaling soarin.ai while preparing for my upcoming internship 
+                            at <span class="highlight">Deloitte</span> in Risk & Financial Advisory. I believe in 
+                            building technology that makes opportunities more accessible for everyone.
+                        </p>
+                        <p>
+                            Outside of work, I'm passionate about <span class="highlight">hiking and fitness</span>, always seeking new trails and challenges. 
+                            I love to <span class="highlight">travel and explore</span> different cultures - I've had amazing experiences in 
+                            <span class="highlight">Mexico, Aruba, Dominican Republic, India, and the UAE</span>, and I'm always 
+                            planning my next adventure. I believe connecting with like-minded people who share similar passions 
+                            is just as important as technical skills in building great teams.
+                        </p>
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="images/aarfan_hike.JPG" alt="Aarfan hiking in the forest" class="hiking-image" loading="lazy">
+                        <div class="image-caption">
+                            <span>🥾 Exploring nature trails</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="stats-grid">
@@ -969,6 +1405,7 @@
                 <button class="tab-button" data-tab="kurtlab">KurtLab</button>
                 <button class="tab-button" data-tab="oksi">OKSI AI</button>
                 <button class="tab-button" data-tab="nasa">NASA</button>
+                <button class="tab-button" data-tab="google">Google</button>
             </div>
 
             <div class="tab-content active" id="deloitte">
@@ -1035,6 +1472,24 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="tab-content" id="google">
+                <div class="job-header">
+                    <h3 class="job-title">Tech Apprenticeship Program</h3>
+                    <p class="company">@ Google</p>
+                    <p class="job-date">Mar 2022 – Jun 2022</p>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Selected among <span class="highlight">top 2% of applicants nationwide</span> for Google's prestigious High School Tech Program</li>
+                        <li>Completed extensive training on Google's product development lifecycle, including <span class="highlight">ML, UX/UI design, and blockchain applications</span></li>
+                        <li>Led a team to develop <span class="highlight">"ReStyle"</span> - a clothing sustainability app with 24 UI screens, user authentication, and payment processing</li>
+                        <li>Designed comprehensive user experience flows and integrated Google's technologies for mobile application development</li>
+                        <li>Presented "ReStyle" app concept at Product Pitch Night to a panel of tech leaders and entrepreneurs</li>
+                        <li>Gained expertise in product management, analytics, security & privacy, and emerging technologies</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1052,7 +1507,7 @@
                 <!-- soarin.ai -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/soarin.png" alt="soarin.ai - AI Career Platform">
+                        <img src="images/soarin.png" alt="soarin.ai - AI Career Platform" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">soarin.ai - AI Career Platform</h3>
@@ -1075,10 +1530,67 @@
                     </div>
                 </div>
 
+                <!-- AI-Powered Squat Form Analyzer -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/squat.png" alt="AI-Powered Squat Form Analyzer" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">🏋️ AI-Powered Squat Form Analyzer</h3>
+                        <p class="project-description">
+                            Real-time computer vision web app using MediaPipe and OpenCV for precise squat form analysis. 
+                            Features 33-point pose detection, biomechanical analysis, and AI-powered feedback at 30+ FPS with 95%+ accuracy.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AHussain101/Squat_Form_Analyzer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Host -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/host.png" alt="Host - On-Demand Home Services Platform" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Host - On-Demand Home Services</h3>
+                        <p class="project-description">
+                            Mobile-first platform connecting homeowners with trusted local service providers for home tasks like cleaning, 
+                            yard work, moving help, and pet care. Built during DubHacks startup incubator with AI-powered dynamic pricing 
+                            and real-time matching algorithms.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Expo</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">AI/ML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AHussain101/Host" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1HadbI3YjiZTxGDJ-k7wwt9QMcLNd-09-/view?resourcekey" target="_blank" class="project-link">
+                                <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- FungiFind -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/fungi.jpeg" alt="FungiFind" />
+                        <img src="images/fungi.jpeg" alt="FungiFind" loading="lazy" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">FungiFind</h3>
@@ -1100,61 +1612,10 @@
                     </div>
                 </div>
 
-                <!-- Pollution & Diseases -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/info.png" alt="Pollution & Diseases" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pollution & Diseases Analysis</h3>
-                        <p class="project-description">
-                            Evaluated the effects of air pollution on respiratory disease mortality using WHO and CDC data. 
-                            Used R for data manipulation and HTML/CSS for front-end design, improving data visualization and user experience.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">R</span>
-                            <span class="tech-tag">Shiny</span>
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">Data Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://zchen66.shinyapps.io/info-final-proj/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Enypto -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/enypto.jpg" alt="Enypto" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Enypto</h3>
-                        <p class="project-description">
-                            Developed a web application for secure email communication using encryption. 
-                            Designed the front end in React, contributing over 400 lines of code. 
-                            Implemented public key cryptography for secure exchanges between users.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Cryptography</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Security</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://devpost.com/software/enypto" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- What's Bruin? -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/whats_bruin.png" alt="What's Bruin? - AI Networking Platform">
+                        <img src="images/whats_bruin.png" alt="What's Bruin? - AI Networking Platform" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">What's Bruin? - AI Networking Platform</h3>
@@ -1179,7 +1640,7 @@
                 <!-- Super Dad World -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/fathers_day.png" alt="Super Dad World - Interactive Father's Day Journey">
+                        <img src="images/fathers_day.png" alt="Super Dad World - Interactive Father's Day Journey" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Super Dad World - Interactive Father's Day Journey</h3>
@@ -1208,7 +1669,7 @@
                 <!-- Bincredible -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/Bincredible.png" alt="Bincredible - Smart Waste Sorting">
+                        <img src="images/Bincredible.png" alt="Bincredible - Smart Waste Sorting" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Bincredible - Smart Waste Sorting</h3>
@@ -1225,6 +1686,57 @@
                         <div class="project-links">
                             <a href="https://github.com/AHussain101/Bincredible_Dubhack24" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pollution & Diseases -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/info.png" alt="Pollution & Diseases" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pollution & Diseases Analysis</h3>
+                        <p class="project-description">
+                            Evaluated the effects of air pollution on respiratory disease mortality using WHO and CDC data. 
+                            Used R for data manipulation and HTML/CSS for front-end design, improving data visualization and user experience.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">R</span>
+                            <span class="tech-tag">Shiny</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://zchen66.shinyapps.io/info-final-proj/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enypto -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/enypto.jpg" alt="Enypto" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Enypto</h3>
+                        <p class="project-description">
+                            Developed a web application for secure email communication using encryption. 
+                            Designed the front end in React, contributing over 400 lines of code. 
+                            Implemented public key cryptography for secure exchanges between users.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Cryptography</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://devpost.com/software/enypto" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
@@ -1283,6 +1795,49 @@
     </footer>
 
     <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (hamburger && navLinks) {
+            const toggleMenu = () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                
+                // Add aria-expanded for accessibility
+                const isActive = hamburger.classList.contains('active');
+                hamburger.setAttribute('aria-expanded', isActive);
+            };
+
+            hamburger.addEventListener('click', toggleMenu);
+            
+            // Keyboard support for hamburger menu
+            hamburger.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleMenu();
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1340,32 +1895,41 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    
-                    // Add different animation classes based on element type
-                    if (element.classList.contains('project-card')) {
-                        element.style.animationDelay = (Array.from(element.parentNode.children).indexOf(element) * 0.1) + 's';
-                        element.classList.add('scale-in');
-                    } else if (element.classList.contains('stat-card')) {
-                        element.style.animationDelay = (Array.from(element.parentNode.children).indexOf(element) * 0.15) + 's';
-                        element.classList.add('fade-in-left');
-                    } else if (element.classList.contains('contact-item')) {
-                        element.style.animationDelay = (Array.from(element.parentNode.children).indexOf(element) * 0.1) + 's';
-                        element.classList.add('fade-in-right');
-                    } else {
-                        element.classList.add('fade-in');
-                    }
-                }
-            });
-        }, observerOptions);
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Observe various elements for animations
-        document.querySelectorAll('.section, .project-card, .stat-card, .contact-item, .section-title, .section-subtitle').forEach(element => {
-            observer.observe(element);
-        });
+        if (!prefersReducedMotion) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        
+                        // Add different animation classes based on element type
+                        if (element.classList.contains('project-card')) {
+                            element.style.animationDelay = (Array.from(element.parentNode.children).indexOf(element) * 0.1) + 's';
+                            element.classList.add('scale-in');
+                        } else if (element.classList.contains('stat-card')) {
+                            element.style.animationDelay = (Array.from(element.parentNode.children).indexOf(element) * 0.15) + 's';
+                            element.classList.add('fade-in-left');
+                        } else if (element.classList.contains('contact-item')) {
+                            element.style.animationDelay = (Array.from(element.parentNode.children).indexOf(element) * 0.1) + 's';
+                            element.classList.add('fade-in-right');
+                        } else {
+                            element.classList.add('fade-in');
+                        }
+                        
+                        // Unobserve after animation is triggered
+                        observer.unobserve(element);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe various elements for animations
+            const elementsToObserve = document.querySelectorAll('.section, .project-card, .stat-card, .contact-item, .section-title, .section-subtitle');
+            elementsToObserve.forEach(element => {
+                if (element) observer.observe(element);
+            });
+        }
 
         // Removed parallax effect to fix scrolling
 
