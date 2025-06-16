@@ -950,6 +950,10 @@
         /* Mobile Responsive (768px and below) */
         @media (max-width: 768px) {
             /* Navigation */
+            .navbar {
+                padding: 1rem 0;
+            }
+
             .nav-container {
                 padding: 0 1rem;
             }
@@ -994,20 +998,24 @@
             /* Hero Section */
             .hero {
                 padding: 0 1rem;
-                min-height: 80vh;
+                min-height: 100vh;
+                padding-top: 5rem;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 3rem;
-                margin-top: 2rem;
+                gap: 2.5rem;
+                margin-top: 0;
+                align-items: center;
+                justify-content: center;
             }
 
             .hero-text h1 {
-                font-size: clamp(2.5rem, 8vw, 3.5rem);
-                line-height: 1.2;
+                font-size: clamp(2.2rem, 7vw, 3.2rem);
+                line-height: 1.3;
                 margin-bottom: 1rem;
+                padding: 0 0.5rem;
             }
 
             .hero-text .subtitle {
@@ -1195,8 +1203,14 @@
 
         /* Small Mobile Responsive (480px and below) */
         @media (max-width: 480px) {
+            .hero {
+                padding-top: 6rem;
+            }
+
             .hero-text h1 {
-                font-size: 2.2rem;
+                font-size: clamp(1.9rem, 6vw, 2.2rem);
+                line-height: 1.4;
+                padding: 0 1rem;
             }
 
             .profile-container {
